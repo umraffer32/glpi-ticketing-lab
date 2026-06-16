@@ -1,6 +1,10 @@
 # Secrets — never commit real credentials
 .env
 
+# Internal planning brief + screenshot staging — local only, not for the public repo
+glpi-project-plan.md
+_screenshot-inbox/
+
 # Docker volume data (if ever bind-mounted locally)
 db_data/
 glpi_data/
