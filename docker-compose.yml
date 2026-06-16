@@ -1,0 +1,5 @@
+# Placeholder — the working stack is written and verified in Phase 2.
+# Target: official glpi/glpi image (tag pinned to current stable at build time)
+# + MariaDB, port 8080:80, GLPI_SKIP_AUTOINSTALL=true so the web installer is run by hand.
+#
+# Do not use this file as-is yet.

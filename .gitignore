@@ -1,0 +1,18 @@
+# Secrets — never commit real credentials
+.env
+
+# Docker volume data (if ever bind-mounted locally)
+db_data/
+glpi_data/
+volumes/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor cruft
+.vscode/
+.idea/
+*.swp
+*~
