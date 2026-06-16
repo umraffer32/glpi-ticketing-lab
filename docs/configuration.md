@@ -24,11 +24,11 @@ Each section follows the same shape:
 ---
 
 ## Security hardening
-- **What:** Changed the four default GLPI account passwords (`glpi`, `tech`, `normal`, `post-only`).
-- **How:** _TODO (Phase 3)_
-- **Why it matters:** GLPI ships with well-known default credentials; rotating them immediately closes a standard initial-access risk before any other configuration.
-- **Screenshot:** _TODO_
-- **Status:** _pending_
+- **What:** Rotated the passwords on all four default GLPI accounts that ship with well-known credentials — `glpi` (super-admin), `tech`, `normal`, and `post-only`.
+- **How:** Under **Administration → Users**, opened each of the four accounts and set a new strong, unique password. The built-in `glpi-system` account was intentionally left untouched — it is a non-interactive system account with no default login password, and altering it can interfere with GLPI's internal/inventory functions.
+- **Why it matters:** GLPI ships with publicly documented default credentials; rotating them immediately closes a standard initial-access risk before any other configuration. On a fresh install GLPI shows a security banner naming the at-risk accounts; clearing them removes the warning.
+- **Screenshot:** before — ![](screenshots/install-default-accounts.png) · the accounts — ![](screenshots/users-list.png) · after (banner cleared) — ![](screenshots/dashboard-secured.png)
+- **Status:** done
 
 ## Incident categorization
 - **What:** A small ITIL-style category tree: Hardware, Software, Network, Access.
