@@ -1,5 +1,30 @@
-# Placeholder — the working stack is written and verified in Phase 2.
-# Target: official glpi/glpi image (tag pinned to current stable at build time)
-# + MariaDB, port 8080:80, GLPI_SKIP_AUTOINSTALL=true so the web installer is run by hand.
-#
-# Do not use this file as-is yet.
+name: glpi
+
+services:
+  glpi:
+    image: glpi/glpi:11.0.7          # official image, pinned to current stable (not :latest)
+    ports:
+      - "8080:80"                     # host 8080 -> container 80
+    env_file: .env                    # GLPI_DB_* connection vars (gitignored)
+    environment:
+      GLPI_SKIP_AUTOINSTALL: "true"   # run the web installer by hand, not auto-install
+    volumes:
+      - glpi_data:/var/glpi           # app data persists here
+    depends_on:
+      - mariadb
+    restart: unless-stopped
+
+  mariadb:
+    image: mariadb:11
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: "yes"   # no fixed root pw; random one per build
+      MARIADB_DATABASE: ${GLPI_DB_NAME}
+      MARIADB_USER: ${GLPI_DB_USER}
+      MARIADB_PASSWORD: ${GLPI_DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  glpi_data:
+  db_data:
