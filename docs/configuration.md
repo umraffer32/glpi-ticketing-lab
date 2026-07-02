@@ -35,11 +35,11 @@ Each section follows the same shape:
 - **Status:** done
 
 ## Incident categorization
-- **What:** A small ITIL-style category tree: Hardware, Software, Network, Access.
-- **How:** _TODO (Phase 3)_
-- **Why it matters:** Consistent categories make tickets routable and reportable instead of free-text chaos.
-- **Screenshot:** _TODO_
-- **Status:** _pending_
+- **What:** A small ITIL-style category tree with four top-level categories: Hardware, Software, Network, Access.
+- **How:** Under **Setup → Dropdowns → ITIL categories** (in the Assistance group), added each of the four categories via **+ Add**.
+- **Why it matters:** Consistent categories make tickets routable and reportable instead of free-text chaos, and they are the key an assignment rule uses to send a ticket to the right team.
+- **Screenshot:** ![](screenshots/ticket-categories.png)
+- **Status:** done
 
 ## Incident management & service-request fulfillment
 - **What:** Logged a couple of incidents and a couple of service requests.
