@@ -70,11 +70,19 @@ Each section follows the same shape:
 - **Status:** _pending_
 
 ## Ticket routing / queue management
-- **What:** Users + groups + an assignment rule routing a category to a group.
-- **How:** _TODO (Phase 3)_
-- **Why it matters:** Rule-based routing puts tickets in front of the right team automatically instead of by manual triage.
-- **Screenshot:** _TODO_
-- **Status:** _pending_
+- **What:** Two support groups (`Service Desk`, `Network Team`) with a technician assigned to a group, plus a business rule that auto-routes tickets in the `Network` category to the `Network Team`.
+- **How:**
+  - Created the groups under **Administration → Groups** (+ Add), then added the `tech` user to **Network Team** via the group's **Users** tab.
+  - Under **Administration → Rules → Business rules for tickets**, created a rule *"Route Network category to Network Team"* (Logical operator AND, Active, applied on ticket **Add**):
+    - **Criterion:** Category `is` Network
+    - **Action:** Technician Group `Assign` Network Team
+- **Why it matters:** Rule-based routing puts tickets in front of the right team automatically instead of by manual triage — the core of queue management.
+- **Screenshots:**
+  - Groups: ![](screenshots/groups-list.png)
+  - Technician in the Network Team: ![](screenshots/network-team-members.png)
+  - Rule criterion (Category is Network): ![](screenshots/assignment-rule-criteria.png)
+  - Rule action (assign to Network Team): ![](screenshots/assignment-rule-actions.png)
+- **Status:** done
 
 ## Automated notifications (optional)
 - **What:** Email notifications on ticket update.
