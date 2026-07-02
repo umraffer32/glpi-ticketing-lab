@@ -1,7 +1,7 @@
 # GLPI Ticketing Lab
 
 A self-hosted GLPI (open-source ITSM) stack, deployed with Docker. Configured by hand to
-demonstrate core IT service-management workflows. incident management, service-request
+demonstrate core IT service-management workflows: incident management, service-request
 fulfillment, SLAs, asset and inventory tracking, and a knowledge base.
 
 <!-- TODO (Phase 4): tighten to a 3-4 sentence overview once the build is done. -->

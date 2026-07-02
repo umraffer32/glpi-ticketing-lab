@@ -24,7 +24,7 @@ Each section follows the same shape:
 ---
 
 ## Security hardening
-- **What.** Rotated the passwords on all four default GLPI accounts that ship with well-known credentials. `glpi` (super-admin), `tech`, `normal`, and `post-only`.
+- **What.** Rotated the passwords on all four default GLPI accounts that ship with well-known credentials: `glpi` (super-admin), `tech`, `normal`, and `post-only`.
 - **How.** Under **Administration → Users**, opened each of the four accounts and set a new strong, unique password. The built-in `glpi-system` account was intentionally left untouched. It's a non-interactive system account with no default login password, and altering it can interfere with GLPI's internal and inventory functions.
 - **Why it matters.** GLPI ships with publicly documented default credentials. Rotating them immediately closes a standard initial-access risk before any other configuration. On a fresh install, GLPI shows a security banner naming the at-risk accounts; clearing them removes the warning.
 - **Screenshots.**
@@ -35,7 +35,7 @@ Each section follows the same shape:
 - **Status.** done
 
 ## Incident categorization
-- **What.** A small ITIL-style category tree with four top-level categories. Hardware, Software, Network, Access.
+- **What.** A small ITIL-style category tree with four top-level categories: Hardware, Software, Network, Access.
 - **How.** Under **Setup → Dropdowns → ITIL categories** (in the Assistance group), added each of the four categories via **+ Add**.
 - **Why it matters.** Consistent categories make tickets routable and reportable instead of free-text chaos, and they're the key an assignment rule uses to send a ticket to the right team.
 - **Screenshot.** ![](screenshots/ticket-categories.png)
@@ -43,11 +43,11 @@ Each section follows the same shape:
 
 ## Incident management and service request fulfillment
 - **What.** Logged two Incidents and two Service Requests, each triaged with distinct urgency, impact, and priority rather than defaulting every field to the same value.
+- **How.** Created each under **Assistance → Tickets → Add**, setting Type, Category, and a real description per ticket, then setting Urgency and Impact independently based on how blocked the user was versus how many people the issue touched, rather than defaulting every field to the same severity.
   - **Incident.** `Workstation won't boot past login screen` (Hardware). Urgency Very High, Impact Medium, Priority High. One user fully blocked, but the failure doesn't extend past their one device.
   - **Incident.** `VPN client fails to connect` (Network). Urgency Medium, Impact Low. A real but partial disruption, not a full block.
   - **Request.** `New monitor requested` (Hardware). Urgency, Impact, and Priority all Very Low. A standard equipment ask, nothing broken.
   - **Request.** `Password reset for domain account` (Access). Urgency High, Impact Low. The user is locked out and blocked, but it's a routine, known procedure, which is what makes it a Request rather than an Incident even though it's urgent.
-- **How.** Created each under **Assistance → Tickets → Add**, setting Type, Category, and a real description per ticket, then setting Urgency and Impact independently based on how blocked the user was versus how many people the issue touched, rather than defaulting every field to the same severity.
 - **Why it matters.** Demonstrates the two core ticket workflows, unplanned disruptions and standard requests, handled distinctly, and shows deliberate triage judgment (urgency versus impact versus priority are three different questions, not one field repeated three times) instead of uniform severity across every ticket.
 - **Screenshots.**
   - Full ticket list, all four, with Category and Priority visible. ![](screenshots/ticket-list.png)
@@ -58,7 +58,7 @@ Each section follows the same shape:
 - **What.** An SLA (`Standard Support SLA`) with a response target, a resolution target, and an escalation level that fires before the resolution deadline is breached.
 - **How.**
   - Under **Setup → Service Levels**, created the SLA container `Standard Support SLA` on a `24/7` calendar.
-  - Inside it, added two targets on its **SLA** tab. `Response Time` (Type `Time to Own`, Maximum Time `4 hours`) and `Resolution Time` (Type `Time to Resolve`, Maximum Time `2 days`).
+  - Inside it, added two targets on its **SLA** tab: `Response Time` (Type `Time to Own`, Maximum Time `4 hours`) and `Resolution Time` (Type `Time to Resolve`, Maximum Time `2 days`).
   - On `Resolution Time`, added an escalation level `Nearing Deadline Warning` (Active, Execution `-1 day`, meaning a day before the deadline).
     - **Criterion.** Status `is not` Closed, so it only fires on tickets still open.
     - **Action.** Priority `Assign` Very High.

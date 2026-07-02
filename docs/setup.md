@@ -1,6 +1,6 @@
-# Setup. Reproduce the deploy from zero
+# Setup
 
-These are the exact, verified steps used to bring the stack up.
+Reproduce the deploy from zero. These are the exact, verified steps used to bring the stack up.
 
 ## Prerequisites
 
