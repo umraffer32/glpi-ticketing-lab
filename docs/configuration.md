@@ -103,11 +103,23 @@ beside the image:
 - **Status.** done
 
 ## IT asset and inventory management
-- **What.** Added a handful of assets (computers, monitors, a software entry).
-- **How.** _TODO (Phase 3)_
-- **Why it matters.** Tying assets to tickets gives context for support and a basis for inventory tracking.
-- **Screenshot.** _TODO_
-- **Status.** _pending_
+- **What.** A small inventory. Two computers (`WKS-001`, `WKS-002`), two monitors (`MON-001`, `MON-002`), and a software entry (`Tailscale`).
+- **How.** Under **Assets → Computers**, **Assets → Monitors**, and **Assets → Software**, added each entry via **+ Add** with just a name, no serial numbers or manufacturer data since these aren't real hardware.
+- **Why it matters.** Tying assets to tickets gives context for support and a basis for inventory tracking. Even a bare-bones inventory is what lets a technician see what device a ticket is about instead of working from a free-text description alone.
+- **Screenshots.**
+  - ![](screenshots/asset-inventory-dashboard.png)
+
+    Assets summary dashboard, counts across computers, monitors, and software.
+  - ![](screenshots/asset-computers-list.png)
+
+    Computers list.
+  - ![](screenshots/asset-monitors-list.png)
+
+    Monitors list.
+  - ![](screenshots/asset-software-list.png)
+
+    Software list.
+- **Status.** done
 
 ## Knowledge base documentation
 - **What.** A knowledge base article (for example, a password reset how-to).
