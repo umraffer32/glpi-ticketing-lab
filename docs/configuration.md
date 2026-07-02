@@ -19,6 +19,18 @@ Each section follows the same shape:
 - **Why it matters.**
 - **Screenshot.** ![](screenshots/<file>.png)
 - **Status.** done
+
+For a single screenshot, keep the label and image on one line as above. For multiple
+screenshots, put each image on its own line with the caption below it, separated by a
+blank line, so GitHub stacks image and caption instead of squeezing the caption
+beside the image:
+- **Screenshots.**
+  - ![](screenshots/<file-1>.png)
+
+    Caption for the first one.
+  - ![](screenshots/<file-2>.png)
+
+    Caption for the second one.
 -->
 
 ---
@@ -28,10 +40,18 @@ Each section follows the same shape:
 - **How.** Under **Administration → Users**, opened each of the four accounts and set a new strong, unique password. The built-in `glpi-system` account was intentionally left untouched. It's a non-interactive system account with no default login password, and altering it can interfere with GLPI's internal and inventory functions.
 - **Why it matters.** GLPI ships with publicly documented default credentials. Rotating them immediately closes a standard initial-access risk before any other configuration. On a fresh install, GLPI shows a security banner naming the at-risk accounts; clearing them removes the warning.
 - **Screenshots.**
-  - Default credentials created at install. ![](screenshots/install-default-accounts.png)
-  - Security warning **before** hardening, the banner naming the at-risk default accounts. ![](screenshots/glpi-dashboard.png)
-  - The accounts, managed under Administration → Users. ![](screenshots/users-list.png)
-  - **After** hardening, warning cleared. ![](screenshots/dashboard-secured.png)
+  - ![](screenshots/install-default-accounts.png)
+
+    Default credentials created at install.
+  - ![](screenshots/glpi-dashboard.png)
+
+    Security warning **before** hardening, the banner naming the at-risk default accounts.
+  - ![](screenshots/users-list.png)
+
+    The accounts, managed under Administration → Users.
+  - ![](screenshots/dashboard-secured.png)
+
+    **After** hardening, warning cleared.
 - **Status.** done
 
 ## Incident categorization
@@ -50,8 +70,12 @@ Each section follows the same shape:
   - **Request.** `Password reset for domain account` (Access). Urgency High, Impact Low. The user is locked out and blocked, but it's a routine, known procedure, which is what makes it a Request rather than an Incident even though it's urgent.
 - **Why it matters.** Demonstrates the two core ticket workflows, unplanned disruptions and standard requests, handled distinctly, and shows deliberate triage judgment (urgency versus impact versus priority are three different questions, not one field repeated three times) instead of uniform severity across every ticket.
 - **Screenshots.**
-  - Full ticket list, all four, with Category and Priority visible. ![](screenshots/ticket-list.png)
-  - An open Incident's detail view. This one also confirms the routing rule from the previous section fired for real. Its Assigned To field shows `Network Team` automatically added alongside the requester, not manually set. ![](screenshots/ticket-incident-open.png)
+  - ![](screenshots/ticket-list.png)
+
+    Full ticket list, all four, with Category and Priority visible.
+  - ![](screenshots/ticket-incident-open.png)
+
+    An open Incident's detail view. This one also confirms the routing rule from the previous section fired for real. Its Assigned To field shows `Network Team` automatically added alongside the requester, not manually set.
 - **Status.** done
 
 ## SLA monitoring and escalation
@@ -64,10 +88,18 @@ Each section follows the same shape:
     - **Action.** Priority `Assign` Very High.
 - **Why it matters.** Time-bound targets and automatic escalation are how a queue stays accountable instead of tickets going stale. The escalation bumps priority a day before breach, which surfaces an at-risk ticket before it's actually late, not after. Priority bump was chosen over an email action because it's directly verifiable without depending on SMTP being configured.
 - **Screenshots.**
-  - Both targets on the SLA. ![](screenshots/sla-targets.png)
-  - Escalation level settings. ![](screenshots/escalation-level-form.png)
-  - Escalation criterion. ![](screenshots/escalation-criteria.png)
-  - Escalation action. ![](screenshots/escalation-actions.png)
+  - ![](screenshots/sla-targets.png)
+
+    Both targets on the SLA.
+  - ![](screenshots/escalation-level-form.png)
+
+    Escalation level settings.
+  - ![](screenshots/escalation-criteria.png)
+
+    Escalation criterion.
+  - ![](screenshots/escalation-actions.png)
+
+    Escalation action.
 - **Status.** done
 
 ## IT asset and inventory management
@@ -93,10 +125,18 @@ Each section follows the same shape:
     - **Action.** Technician Group `Assign` Network Team
 - **Why it matters.** Rule-based routing puts tickets in front of the right team automatically instead of by manual triage. That's the core of queue management.
 - **Screenshots.**
-  - Groups. ![](screenshots/groups-list.png)
-  - Technician in the Network Team. ![](screenshots/network-team-members.png)
-  - Rule criterion (Category is Network). ![](screenshots/assignment-rule-criteria.png)
-  - Rule action (assign to Network Team). ![](screenshots/assignment-rule-actions.png)
+  - ![](screenshots/groups-list.png)
+
+    Groups.
+  - ![](screenshots/network-team-members.png)
+
+    Technician in the Network Team.
+  - ![](screenshots/assignment-rule-criteria.png)
+
+    Rule criterion (Category is Network).
+  - ![](screenshots/assignment-rule-actions.png)
+
+    Rule action (assign to Network Team).
 - **Status.** done
 
 ## Automated notifications (optional)
