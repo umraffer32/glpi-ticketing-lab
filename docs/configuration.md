@@ -122,11 +122,17 @@ beside the image:
 - **Status.** done
 
 ## Knowledge base documentation
-- **What.** A knowledge base article (for example, a password reset how-to).
-- **How.** _TODO (Phase 3)_
-- **Why it matters.** Documented, reusable answers reduce repeat tickets and speed resolution.
-- **Screenshot.** _TODO_
-- **Status.** _pending_
+- **What.** A knowledge base article, `Configure SSH for key-based authentication and disable password login`, covering key generation, deployment, and hardening `sshd_config` to turn off password login.
+- **How.** Under **Tools → Knowledge base → + Add**, wrote the article as a Subject plus a step-by-step Content body, then applied bold to each section heading and a bullet list to the Environment section using the rich-text editor. Left it out of the public FAQ since it's an internal hardening procedure.
+- **Why it matters.** Documented, reusable answers reduce repeat tickets and speed resolution. A security-hardening how-to also extends the same theme as the account password rotation covered earlier, moving from default-credential cleanup to disabling password auth entirely.
+- **Screenshots.**
+  - ![](screenshots/kb-article-detail.png)
+
+    Article detail view, rendered content.
+  - ![](screenshots/kb-article-list.png)
+
+    The entry in the Knowledge base browse list.
+- **Status.** done
 
 ## Ticket routing and queue management
 - **What.** Two support groups (`Service Desk`, `Network Team`) with a technician assigned to a group, plus a business rule that auto-routes tickets in the `Network` category to the `Network Team`.
