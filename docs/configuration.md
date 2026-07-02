@@ -42,11 +42,17 @@ Each section follows the same shape:
 - **Status.** done
 
 ## Incident management and service request fulfillment
-- **What.** Logged a couple of incidents and a couple of service requests.
-- **How.** _TODO (Phase 3)_
-- **Why it matters.** Demonstrates the two core ticket workflows, unplanned disruptions and standard requests, handled distinctly.
-- **Screenshot.** _TODO_
-- **Status.** _pending_
+- **What.** Logged two Incidents and two Service Requests, each triaged with distinct urgency, impact, and priority rather than defaulting every field to the same value.
+  - **Incident.** `Workstation won't boot past login screen` (Hardware). Urgency Very High, Impact Medium, Priority High. One user fully blocked, but the failure doesn't extend past their one device.
+  - **Incident.** `VPN client fails to connect` (Network). Urgency Medium, Impact Low. A real but partial disruption, not a full block.
+  - **Request.** `New monitor requested` (Hardware). Urgency, Impact, and Priority all Very Low. A standard equipment ask, nothing broken.
+  - **Request.** `Password reset for domain account` (Access). Urgency High, Impact Low. The user is locked out and blocked, but it's a routine, known procedure, which is what makes it a Request rather than an Incident even though it's urgent.
+- **How.** Created each under **Assistance → Tickets → Add**, setting Type, Category, and a real description per ticket, then setting Urgency and Impact independently based on how blocked the user was versus how many people the issue touched, rather than defaulting every field to the same severity.
+- **Why it matters.** Demonstrates the two core ticket workflows, unplanned disruptions and standard requests, handled distinctly, and shows deliberate triage judgment (urgency versus impact versus priority are three different questions, not one field repeated three times) instead of uniform severity across every ticket.
+- **Screenshots.**
+  - Full ticket list, all four, with Category and Priority visible. ![](screenshots/ticket-list.png)
+  - An open Incident's detail view. This one also confirms the routing rule from the previous section fired for real. Its Assigned To field shows `Network Team` automatically added alongside the requester, not manually set. ![](screenshots/ticket-incident-open.png)
+- **Status.** done
 
 ## SLA monitoring and escalation
 - **What.** An SLA (`Standard Support SLA`) with a response target, a resolution target, and an escalation level that fires before the resolution deadline is breached.
