@@ -37,6 +37,14 @@ reachable only on the internal compose network.
 Application and database state live in named volumes so container restarts and recreates don't
 wipe tickets or configuration.
 
+### SLA escalation bumps priority instead of sending email
+The escalation level on the resolution SLA changes ticket priority rather than firing an email
+notification. A priority change is directly observable in the GLPI UI and doesn't depend on
+SMTP being configured. Email notification is covered separately, and only claimed if it's
+actually gotten working.
+*Rejected.* Email notification as the escalation action. Adds an external dependency (SMTP)
+that isn't otherwise part of this stack.
+
 ## Repository and workflow
 
 ### Secrets kept out of git

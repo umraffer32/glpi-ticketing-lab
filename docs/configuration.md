@@ -49,11 +49,20 @@ Each section follows the same shape:
 - **Status.** _pending_
 
 ## SLA monitoring and escalation
-- **What.** An SLA with response and resolution targets and an escalation rule.
-- **How.** _TODO (Phase 3)_
-- **Why it matters.** Time-bound targets and automatic escalation are how a queue stays accountable instead of tickets going stale.
-- **Screenshot.** _TODO_
-- **Status.** _pending_
+- **What.** An SLA (`Standard Support SLA`) with a response target, a resolution target, and an escalation level that fires before the resolution deadline is breached.
+- **How.**
+  - Under **Setup → Service Levels**, created the SLA container `Standard Support SLA` on a `24/7` calendar.
+  - Inside it, added two targets on its **SLA** tab. `Response Time` (Type `Time to Own`, Maximum Time `4 hours`) and `Resolution Time` (Type `Time to Resolve`, Maximum Time `2 days`).
+  - On `Resolution Time`, added an escalation level `Nearing Deadline Warning` (Active, Execution `-1 day`, meaning a day before the deadline).
+    - **Criterion.** Status `is not` Closed, so it only fires on tickets still open.
+    - **Action.** Priority `Assign` Very High.
+- **Why it matters.** Time-bound targets and automatic escalation are how a queue stays accountable instead of tickets going stale. The escalation bumps priority a day before breach, which surfaces an at-risk ticket before it's actually late, not after. Priority bump was chosen over an email action because it's directly verifiable without depending on SMTP being configured.
+- **Screenshots.**
+  - Both targets on the SLA. ![](screenshots/sla-targets.png)
+  - Escalation level settings. ![](screenshots/escalation-level-form.png)
+  - Escalation criterion. ![](screenshots/escalation-criteria.png)
+  - Escalation action. ![](screenshots/escalation-actions.png)
+- **Status.** done
 
 ## IT asset and inventory management
 - **What.** Added a handful of assets (computers, monitors, a software entry).
