@@ -159,7 +159,7 @@ beside the image:
 
 ## Automated notifications (optional)
 - **What.** Email notifications on ticket update.
-- **How.** _only document if actually configured and working_
+- **How.** Not configured. It would need a real SMTP server, and this lab doesn't have one.
 - **Why it matters.** Keeps requesters and technicians informed without manual follow-up.
-- **Screenshot.** _TODO_
-- **Status.** _not yet attempted. Will be marked skipped if not completed._
+- **Screenshot.** n/a
+- **Status.** skipped
