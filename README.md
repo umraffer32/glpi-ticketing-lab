@@ -1,14 +1,14 @@
 # GLPI Ticketing Lab
 
-A self-hosted GLPI (open-source ITSM) stack, deployed with Docker. Configured by hand to
-demonstrate core IT service-management workflows: incident management, service-request
-fulfillment, SLAs, asset and inventory tracking, and a knowledge base.
-
-<!-- TODO (Phase 4): tighten to a 3-4 sentence overview once the build is done. -->
+A self-hosted GLPI (open-source ITSM) stack, deployed with Docker and configured by hand from a
+blank install. The default admin credentials get rotated first, before anything else, then the
+rest gets built on top: ticket categories feeding a routing rule, an SLA with a real escalation,
+a small asset inventory, and a knowledge base article. Every item in `docs/configuration.md` was
+actually clicked through and screenshotted, not just described.
 
 ## What this demonstrates
 
-<!-- TODO (Phase 4): fill in from what was ACTUALLY configured in Phase 3. Candidates: -->
+- Security hardening (default account password rotation)
 - Incident categorization and incident management
 - Service request fulfillment
 - SLA definition with response and resolution targets, plus escalation
@@ -24,7 +24,7 @@ fulfillment, SLAs, asset and inventory tracking, and a knowledge base.
 
 ## Run it yourself
 
-<!-- TODO (Phase 4): finalize after Phase 2 verification. See docs/setup.md for full steps. -->
+See [docs/setup.md](docs/setup.md) for the full walkthrough. Short version:
 
 ```bash
 cp .env.example .env      # then edit .env with a real DB password
